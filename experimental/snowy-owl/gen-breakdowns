@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+
+from collections import defaultdict
+from billy import db
+import sys
+
+state = sys.argv[1]
+
+breakdown = {}
+numcount = defaultdict(int)
+total_legs = 0
+total_raised = 0
+min_total = None
+max_total = None
+
+legislators = db.legislators.find({"state": state})
+for leg in legislators:
+    raised = leg['_total_contributions']
+    breakdown[leg['leg_id']] = raised
+    total_legs += 1
+    total_raised += raised
+    if not min_total or raised < min_total:
+        min_total = raised
+
+    if not max_total or raised > max_total:
+        max_total = raised
+
+avg = (total_raised / total_legs)
+print "min:", min_total
+print "max:", max_total
+print "avg:", avg
