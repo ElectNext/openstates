@@ -2,9 +2,11 @@
 
 from collections import defaultdict
 from billy import db
+import json
 import sys
 
 state = sys.argv[1]
+breakup = 100000
 
 breakdown = {}
 numcount = defaultdict(int)
@@ -15,8 +17,12 @@ max_total = None
 
 legislators = db.legislators.find({"state": state})
 for leg in legislators:
+    if not "_total_contributions" in leg:
+        continue
+
     raised = leg['_total_contributions']
-    breakdown[leg['leg_id']] = raised
+    cat = (raised / breakup)
+    breakdown[leg['leg_id']] = cat
     total_legs += 1
     total_raised += raised
     if not min_total or raised < min_total:
@@ -29,3 +35,4 @@ avg = (total_raised / total_legs)
 print "min:", min_total
 print "max:", max_total
 print "avg:", avg
+print json.dumps(breakdown, sort_keys=True, indent=4)
