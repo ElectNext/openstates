@@ -32,7 +32,13 @@ for leg in legislators:
         max_total = raised
 
 avg = (total_raised / total_legs)
+
+red = defaultdict(int)
+for entry in breakdown:
+    red[breakdown[entry]] += 1
+
 print "min:", min_total
 print "max:", max_total
 print "avg:", avg
-print json.dumps(breakdown, sort_keys=True, indent=4)
+print "red:", red
+#print json.dumps(breakdown, sort_keys=True, indent=4)
