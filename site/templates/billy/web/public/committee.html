@@ -27,6 +27,7 @@ $(document).ready(function() {
 {% endblock %}
 
 {% block content %}
+<div id="container">
 <ul class="breadcrumb floatedList clearfix">
     <li><a href="{{metadata.get_absolute_url}}">{{metadata.name}}</a></li>
     <li>
@@ -135,6 +136,6 @@ $(document).ready(function() {
 {% endif %}
 
 {% sources committee %}
-
+</div>
 {% endblock %}
 

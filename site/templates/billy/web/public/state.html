@@ -19,6 +19,7 @@
 {% endblock %}
 
 {% block content %}
+<div id="container">
     <div class="fullWidth">
         <div id="stateimg-{{metadata.abbr}}" class="stateTitle">
             <h2 class="withTip">{{metadata.legislature_name}}</h2>
@@ -27,7 +28,7 @@
     </div>
 
     <div class="fullWidth module clear">
-        <h3 class="moduleTitle">{% trans "Legislators" %}</h3>
+        <h3 class="moduleTitle" id="legislatorTitle">{% trans "Legislators" %}</h3>
         <div class="twoCol colLt withDash centeredText" id="totalLeg">
             <ul>
                 {% for chamber in chambers %}
@@ -69,7 +70,7 @@
     {# hide committees module if unicameral #}
     {% if chambers|length > 1 %}
     <div class="fullWidth module clear">
-        <h3 class="moduleTitle">{% trans "Committees" %}</h3>
+        <h3 class="moduleTitle" id="committeeTitle">{% trans "Committees" %}</h3>
             {% if  joint_committee_count %}
                 <ul class="inlineThirds centeredText">
             {% else %}
@@ -94,13 +95,12 @@
     {% endif %}
 
     <div class="fullWidth module">
-        <h3 class="moduleTitle">{% trans "Bills" %}</h3>
+        <h3 class="moduleTitle" id="billTitle">{% trans "Bills" %}</h3>
     {% if chambers|length == 2 %}
     {# bicameral bill view, stacked passed/introduced - side by side chambers #}
         {% for chamber in chambers %}
         <div class="sixCol {% if forloop.first %} colLt {% else %} colRt {% endif %}">
-            <h4>{{ chamber.name }}</h4>
-            <div class="medModule">
+            <div class="lgModule">
                 {% include "billy/web/public/_recently_passed.html" %}
             </div>
             {% include "billy/web/public/_recently_introduced.html" %}
@@ -121,7 +121,7 @@
     </div>
 
     <div class="fullWidth module">
-        <h3 class="moduleTitle">{% trans "Available Sessions" %}</h3>
+        <h3 class="moduleTitle" id="sessionsTitle">{% trans "Available Sessions" %}</h3>
         <table>
             <thead> <tr> <th>{% trans "Session" %}</th> <th>{% trans "Bills" %}</th> </tr> </thead>
             <tbody>
@@ -246,5 +246,5 @@
         }
     });
 </script>
-
+</div>
 {% endblock %}

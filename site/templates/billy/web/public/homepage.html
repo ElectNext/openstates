@@ -9,53 +9,38 @@
 {% block bodyclass %}home{% endblock %}
 
 {% block content %}
+<div id="featureWrapper">
+    <div id="feature" class="textReplace">
+        <h2>Discover politics in your state.</h2>
+        <p class="callOut">{% trans "Find your legislators, see how they've voted and browse upcoming legislation and events." %}</p>
+    </div>    
+</div>    
     <div id="container">
-        <div class="module">
-            <div class="eightCol">
-                    <div class="medModuleSm">
-                        <p class="callOut">
-                        {% trans "Discover politics in your state. Find your legislators, see how they've voted and browse upcoming legislation and events." %}
-                        </p>
-
-                {% if active_states %}
-                    <p>{% trans "While Open States is in beta this site is only available for" %}
-                    {% for metadata in active_states %}
-                    <a href="{% url 'state' metadata.abbreviation %}"> {{metadata.name}}</a>{% if forloop.revcounter > 2 %},{% elif forloop.revcounter == 2 %} {% trans "and" %}{% endif %}{% endfor %}.
-                {% endif %}
-
-                <p>{% trans 'In the meantime, you can get <a href="http://itunes.apple.com/app/open-states/id500672932?mt=8">Open States for the iPhone and iPad</a> to keep up-to-date on your state legislature, from bills being considered and how to contact lawmakers, campaign finance and voting records, plus local news.' %}</p>
-                </div>
-                <div class="clear"></div>
-            </div> 
-        </div>
-        <div class="medmoduleSm">
-            <div class="sixCol colLt callOutBox">
-                <h3 class="tipSm">{% trans "Be notified when we launch in the remaining states." %}</h3>
-                <form action="http://organizing.sunlightfoundation.com/page/s/open-states" method="post" id="notify">
-                    <ul>
-                        <li>
-                        <label class="hidden">{% trans "Email" %}</label>
-                            <input type="text" name="email" placeholder="{% trans 'your email address' %}">
-                        </li>
-                        <li>
-                            <label class="hidden">{% trans "Zip Code" %}</label>
-                            <input type="text" name="zip" placeholder="{% trans 'your zip code' %}">
-                        </li>
-                        <li>
-                            <button type="submit"> <span>{% trans "Submit" noop %}</span> </button>
-                        </li>
-                    </ul>
+        <div class="medModule homeSections">
+            <div class="sixCol colLt" id="findLeg">
+                <h3>Find Your Legislator</h3>
+                <form action="/find_your_legislator/" method="get" id="legSearch">
+                    <label class="specialHeader">Enter Your Address</label>
+                    <input type="text" name="q" id="id_q" placeholder="{% trans 'enter address' %}">
+                    <button type="submit">
+                        <span>{% trans "Go" %}</span>
+                    </button>
                 </form>
-                <div class="clear"></div>
             </div>
-            <div class="sixCol colRt" id="dataBox">
-                <h3 class="tipSm">{% trans "Just want data?" %}</h3>
+            <div class="sixCol colRt">
+                <h3>Browse by State</h3>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="smModule">
+            <div class="sevenCol colRt" id="dataBox">
+                <h4 class="tipSm">{% trans "Just want data?" %}</h4>
                 <p>{% trans 'We gather legislative data from all 50 states, Washington D.C. and Puerto Rico, and then make it available in a common format via our <a href="/api/">API</a> and <a href="/downloads/">bulk downloads</a>.' %}</p>
                 <p>{% trans 'You can also join our <a href="http://groups.google.com/group/fifty-state-project">Google Group</a> to get involved.' %}
                 </p>
             </div>
             <div class="clear"></div>
-        </div>
+        </div>    
     </div>
     </div>
 {% endblock %}

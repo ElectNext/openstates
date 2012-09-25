@@ -109,13 +109,13 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 
 #container, footer, #mainHeader { width: 940px; margin: 0 auto; padding: 0 10px; }
 body { background: #fafaf6 url(images/bg.jpg) top center repeat-x; }
-.home #container { background: url(images/bg_map.jpg) right top no-repeat; margin-top: -60px; padding-top: 60px; min-height: 450px;}
 
 button, .textReplace, #shareBtns li a { text-indent: -9999em; display: block; border-bottom: none; }
 .module { padding-left: 30px; padding-bottom: 80px; background: url(images/bg_moduleborder.jpg) center bottom no-repeat;}
 .moduleNoBorder { padding-left: 30px; padding-bottom: 60px; }
 .smModule { margin-bottom: 20px;}
 .medModule { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px dashed #e2e2dd;}
+.lgModule { margin-bottom: 50px; padding-bottom: 50px; border-bottom: 1px dashed #e2e2dd;}
 .medModuleSm { margin-bottom: 30px;}
 .home .module { padding-left: 0;}
 .ulTitle{ padding-left: 30px}
@@ -156,8 +156,17 @@ h6, .h5 { margin-bottom: 20px; font-size: 110%; line-height: 22px; font-weight: 
 .h6{ font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; color: #B4B1AB;display: block; font-weight: normal; margin-bottom: 10px}
 h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 220%; line-height: 30px; font-weight: normal;}
 
-.moduleTitle { background: url(images/bg_moduleTitle.jpg) left 6px no-repeat; margin-left: -30px; padding-left: 30px;}
+.moduleTitle { background: url(images/bg_moduleTitle.jpg) left 6px no-repeat; margin-left: -30px; padding-left: 30px; padding: 20px 0 10px 75px;}
 .inlineTitle { float: left; margin-right: 15px;}
+
+#senate_smHeader { background: url(images/icon_senate.jpg) top right no-repeat; }
+.smHeader { border-bottom: 1px dashed #E2E2DD; margin-bottom: 30px; }
+.smHeader h5 { float: left; margin-right: 20px; }
+
+#legislatorTitle { background: url(images/icon_legislators.jpg) top left no-repeat; }
+#committeeTitle { background: url(images/icon_committees.jpg) top left no-repeat; }
+#billTitle { background: url(images/icon_bills.jpg) top left no-repeat; }
+#sessionsTitle { background: url(images/icon_sessions.jpg) top left no-repeat; }
 
 a.colorRollover:link, a.colorRollover:active, a.colorRollover:visited { color: #55524f; border-bottom: 1px dotted #d2cdc4;}
 a.colorRollover:hover { color: #be9c16; }
@@ -181,6 +190,14 @@ header#mainHeader { background: url(images/bg_header.jpg) top left no-repeat; mi
 
 #mainHeader h1 { width: 414px; height: 46px; padding-top: 35px; margin-bottom: 34px; float: left;}
 #mainHeader h1 a { background: url(images/logo.png) top left no-repeat; width: 414px; height: 46px; }
+
+#featureWrapper { background: url(images/bg_featureRepeat.jpg) center 50px repeat-x; margin-top: -45px;  }
+#feature { background: url(images/bg_homeTitle.jpg) center top no-repeat; height: 481px;  }
+.homeSections { margin: 0 auto; text-align: center; margin-top: -90px; margin-bottom: 50px; }
+.homeSections #legSearch { margin-top: 70px; }
+#findLeg { background: url(images/bg_findLeg.jpg) center bottom no-repeat; min-height: 280px; }
+#findLeg #legSearch input, #findLeg button { display: inline; float: none; }
+#findLeg #legSearch input { width: 200px; margin-left: 20px;  }
 
 #mainFilter { margin-bottom: 10px;}
 #mainFilter li { float: None; margin-right: 0px;}
@@ -207,7 +224,7 @@ nav { background: url(images/bg_secNav.png) center top no-repeat; width: 900px; 
 #youTube a { background: url(images/social_sprites.png) left -137px no-repeat;}
 #youTube a:hover { background: url(images/social_sprites.png) left -86px no-repeat;}
 
-.rssIcon { float: right; background: url(images/social_sprites.png) left -222px no-repeat; width: 16px; height: 16px; }
+.rssIcon { float: left; background: url(images/social_sprites.png) left -222px no-repeat; width: 16px; height: 16px; margin-top: 5px;  }
 .rssIcon:hover { background: url(images/social_sprites.png) left -205px no-repeat; }
 
 
@@ -253,6 +270,8 @@ ul .three { padding-left: 24px; }
 .floatedList li { float: left; margin-right: 20px;}
 .inlineList ul{margin-left: 30px;}
 .inlineList li { display: inline-block; margin-right: 10px;}
+
+.withDisks li { background: url(images/bg_list.png) left 7px no-repeat; padding-left: 20px;  margin-left: 30px; }
 
 ul li { margin-bottom: 20px; }
 .noSpace li { margin-bottom: 0px;}
@@ -494,7 +513,7 @@ div.flatpage table#download_list { width: auto; }
 #stateimg-wi { background: url(images/state/wisconsin.jpg) left center no-repeat; }
 #stateimg-wy { background: url(images/state/wyoming.jpg) left center no-repeat; }
 
-#dataBox { background: url(images/bg_data.jpg) top left no-repeat; padding-left: 110px; min-height: 140px; width: 325px;}
+#dataBox { background: url(images/bg_data.jpg) top left no-repeat; padding-left: 110px; min-height: 140px; padding-top: 10px; margin-left: 150px; }
 /* mapbox */
 .mapbox.leaflet-container  { background: transparent; }
 #container .mapbox img { padding: 0px; border: 0px; }

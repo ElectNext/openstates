@@ -1,7 +1,7 @@
 $(document).ready( function() {
 
     // make select2 work
-    $("#id_abbr").select2({placeholder: "Select a State"}).change(
+    $("#id_abbr").select2({placeholder: "Select"}).change(
         function() { this.form.submit(); });
     // made form submit on change, hide submit button
     $('#state_select_submit').hide();

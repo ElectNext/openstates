@@ -23,6 +23,7 @@
 
 
 {% block content %}
+<div id="container">
         <ul class="breadcrumb floatedList clearfix">
             <li><a href="{{metadata.get_absolute_url}}">{{metadata.name}}</a></li>
             <li>
@@ -324,4 +325,5 @@
         {% sources bill %}
         </div>
         <div class="clear"></div>
+</div>
         {% endblock %}

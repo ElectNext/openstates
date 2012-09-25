@@ -1,10 +1,12 @@
 {% load url from future %}
 {% load i18n %}
 
-<span style="float: right"><a class="rssIcon" href="{% url 'bills_feed' abbr %}?chamber={{chamber.type}}&sort=first"></a></span>
-<h5>{% trans "Recently Introduced" %}</h5>
+<div class="smHeader clearfix" id="senate_smHeader">
+    <h5 class="withTip">{% trans "Recently Introduced in Senate" %}</h5>
+    <a class="rssIcon" href="{% url 'bills_feed' abbr %}?chamber={{chamber.type}}&sort=first"></a>
+</div>
 {% if chamber.latest_bills %}
-    <ul>
+    <ul class="withDisks">
     {% for bill in chamber.latest_bills %}
         <li>
             <time class="published">{{ bill.action_dates.first|date:"F d, Y"}}</time>
