@@ -1,9 +1,11 @@
 import re
+# -*- coding: utf-8 -*-
 import types
 import pprint
 import itertools
 import sre_constants
 import webbrowser
+import subprocess
 from code import InteractiveConsole
 from operator import itemgetter
 from os.path import abspath, dirname, join
@@ -16,8 +18,20 @@ from categories import categories
 from billy.models import db
 
 
-logger = logbook.Logger('bathawk')
+logger = logbook.Logger('bathawk.batshell')
 HERE = dirname(abspath(__file__))
+
+
+try:
+    subprocess.check_call("echo 'test' | xsel -pi", shell=True)
+except subprocess.CalledProcessError:
+    xsel_enabled = False
+    logger.warning(u'✄ Proceeding without xsel ☹')
+    logger.info('Please install xsel to automatically '
+                'copy tested regexes to the clipboard.')
+else:
+    xsel_enabled = True
+    logger.info(u'✄ xsel is enabled! ☺')
 
 
 def command(*aliases):
@@ -97,10 +111,18 @@ class ShellCommands(object):
                 return
         self.current_rgx = line
         self.show_matches_start = 0
+
+        total_matches = len(filter(rgx.search, self.actions.list))
+
         with indent(4, quote=' >'):
-            puts('Found ' + colored.red(len(matched)) + ' matches:')
+            puts('Found ' + colored.red(total_matches) + ' matches:')
         self._print_matches(matched[:self.show])
         self.matched = matched
+
+        # Copy the pattern to the clipboard.
+        if xsel_enabled:
+            p = subprocess.Popen(['xsel', '-bi'], stdin=subprocess.PIPE)
+            p.communicate(input=line)
 
     def _print_matches(self, matched):
         actions = map(itemgetter(0), matched)

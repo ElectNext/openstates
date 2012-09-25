@@ -3,6 +3,7 @@
 {% load humanize %}
 {% load i18n %}
 {% load customtags %}
+{% load markup_tags %}
 
 {% block title %}
   {{bill.bill_id }} - {{metadata.display_name}} {{bill.session_details.display_name}} - Open States
@@ -55,7 +56,7 @@
             <div class="medModule">
                 <h1 class="withTimeline withTip" style="padding-top: 30px;">{{ bill.bill_id }}</h1>
                 <p class="tip">{{ metadata.name }} {{ bill.chamber_name }} {{bill.type_string|title}}</p>
-                <p>{{ bill.title|capfirst }}</p>
+                <p>{{ bill.title|capfirst|smallcaps }}</p>
             </div>
 
             <dl class="inlineList">
@@ -222,13 +223,13 @@
                             <td class="tip withTipSm">{{ action.date|date:"M j, Y"}}</td>
                             <td>{{ action.actor_name }}</td>
                         {% if action.related_votes %}
-                        <td>{{ action.action_display|safe }}
+                        <td>{{ action.action_display|safe|smallcaps }}
                             {% for vote in action.related_votes %}
-                                <a href = '/{{abbr}}/votes/{{vote}}' >Related Vote</a>
+                                - <a href = '/{{abbr}}/votes/{{vote}}' >Related Vote</a>
                             {% endfor %}
                         </td>
                         {% else %}
-                            <td>{{ action.action_display|safe }}</td>
+                            <td>{{ action.action_display|safe|smallcaps }}</td>
                         {% endif %}
                         </tr>
                     {% endfor %}
@@ -276,11 +277,11 @@
             <table>
                 <thead>
                     <tr>
-                        <th>{% trans "What" %}</th>
-                        <th>{% trans "When" %}</th>
-                        <th>{% trans "Who" %}</th>
-                        <th>{% trans "Where" %}</th>
-                        <th>{% trans "Why" %}</th>
+                        <th>{% trans "Description" %}</th>
+                        <th>{% trans "Date" %}</th>
+                        <th>{% trans "Attendees" %}</th>
+                        <th>{% trans "Location" %}</th>
+                        <th>{% trans "Bills" %}</th>
                     </tr>
                 </thead>
                 <tbody>

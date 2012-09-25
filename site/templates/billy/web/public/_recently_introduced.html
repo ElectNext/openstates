@@ -1,4 +1,5 @@
 {% load url from future %}
+{% load markup_tags %}
 {% load i18n %}
 
 <div class="smHeader clearfix" id="senate_smHeader">
@@ -18,7 +19,7 @@
                     {% endif %} {% endwith %}
                 </span>
             </span>
-            <p class="clear">{{ bill.title|truncatewords:50}}</p>
+            <p class="clear">{{ bill.title|truncatewords:50|smallcaps}}</p>
         </li>
     {% endfor %}
     </ul>

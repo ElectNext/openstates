@@ -1,5 +1,6 @@
 {% extends "billy/web/public/base.html" %}
 {% load url from future %}
+{% load markup_tags %}
 {% load staticfiles %}
 {% load i18n %}
 {% load humanize %}
@@ -248,7 +249,11 @@
                 {% for role in legislator.roles_manager %}
                 {% if role.type == 'committee member' %}
                 <li class="{% cycle 'one' 'two' 'three' %}">{{ role.type_display }}
-                    {% if 'committee_id' in role %}<a href="{% url 'committee' abbr role.committee_id %}">{{ role.committee_name }}</a>{% else %}{{ role.committee_name }}{% endif %}</li>
+                {% if 'committee_id' in role %}
+                <a href="{% url 'committee' abbr role.committee_id %}">{{ role.committee_name }}</a>
+                {% else %} {{ role.committee_name }}{% endif %}
+                {% if role.position|lower != "member" %} ({{role.position}}) {% endif %}
+                </li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -268,7 +273,7 @@
 	                        <time class="published tipSm">{{bill.most_recent_action.date|date:"F d, Y"}}</time>
                             <a class="h4 inlineTitle withTip" href="{{ bill.get_absolute_url }}">{{bill.bill_id}}</a> <span class="sideNote">{% for primary in bill.sponsors_manager.primary_list %}
                                 {{ primary.name}}{% if not forloop.last %}, {% endif %}{% endfor %}</span>
-                            <p class="clear">{{bill.title}}</p>
+                            <p class="clear">{{bill.title|smallcaps}}</p>
                         </li>
                     {% endfor %}
                 </ul>
