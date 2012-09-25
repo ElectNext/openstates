@@ -108,7 +108,7 @@ button, .buttonLink { width: auto; text-indent: -9999em; display: block; border:
 /* structure */
 
 #container, footer, #mainHeader { width: 940px; margin: 0 auto; padding: 0 10px; }
-body { background: #fafaf6 url(images/bg.jpg) top center repeat-x; }
+body { background: #fafaf6 url(images/bg.jpg) top center repeat-x; background-position-y: -10px; }
 
 button, .textReplace, #shareBtns li a { text-indent: -9999em; display: block; border-bottom: none; }
 .module { padding-left: 30px; padding-bottom: 80px; background: url(images/bg_moduleborder.jpg) center bottom no-repeat;}
@@ -184,14 +184,17 @@ a.tip:hover { color: #d6ac04; }
 
 
 /* header */
-#searchform { float: right; width: 265px; margin-top: 5px; }
-header#mainHeader { background: url(images/bg_header.jpg) top left no-repeat; min-height: 226px;}
+#searchform { width: 365px; }
+#siteDiscovery li { float: left; margin-right: 20px; margin-bottom: 0px; height: 43px;}
+#siteDiscovery .tip { float: left; padding-top: 10px; margin-right: 20px; color: #635F5C;  }
+#siteDiscovery label.tip { padding-top: 5px; }
+header#mainHeader { background: url(images/bg_header.jpg) bottom left no-repeat; min-height: 216px; background-position-y: -10px; }
 .home header#mainHeader { margin-bottom: 40px;}
 
-#mainHeader h1 { width: 414px; height: 46px; padding-top: 35px; margin-bottom: 34px; float: left;}
+#mainHeader h1 { width: 414px; height: 46px; padding-top: 70px; margin-bottom: 27px; float: left;}
 #mainHeader h1 a { background: url(images/logo.png) top left no-repeat; width: 414px; height: 46px; }
 
-#featureWrapper { background: url(images/bg_featureRepeat.jpg) center 50px repeat-x; margin-top: -45px;  }
+#featureWrapper { background: url(images/bg_featureRepeat.jpg) center 50px repeat-x; margin-top: -65px;  }
 #feature { background: url(images/bg_homeTitle.jpg) center top no-repeat; height: 481px;  }
 .homeSections { margin: 0 auto; text-align: center; margin-top: -90px; margin-bottom: 50px; }
 .homeSections #legSearch { margin-top: 70px; }
@@ -199,7 +202,7 @@ header#mainHeader { background: url(images/bg_header.jpg) top left no-repeat; mi
 #findLeg #legSearch input, #findLeg button { display: inline; float: none; }
 #findLeg #legSearch input { width: 200px; margin-left: 20px;  }
 
-#mainFilter { margin-bottom: 10px;}
+#mainFilter { margin-top: 3px; }
 #mainFilter li { float: None; margin-right: 0px;}
 #mainFilter label { font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique;  margin-right: 10px; font-size: 115%; padding-top: 5px; display: block; float: left;}
 
@@ -210,9 +213,9 @@ nav li.active a:link, nav li.active a:visited, nav li.active a:active  { color: 
 nav { background: url(images/bg_secNav.png) center top no-repeat; width: 900px; padding: 13px 20px 0; font-family: Georgia, 'Times New Roman', Times, serif; }
 
 #searchform button { background: url(images/btn_search.png) top left no-repeat; width: 45px; height: 36px; float: left;}
-#searchform input { float: left; margin-right: 15px; font-size: 101%; width: 190px; margin-top: 2px; -moz-appearance: textfield; -webkit-appearance: textfield; appearance: textfield;}
+#searchform input { padding: 6px 1px 4px; float: left; margin-right: 15px; font-size: 101%; width: 190px; margin-top: 2px; -moz-appearance: textfield; -webkit-appearance: textfield; appearance: textfield;}
 
-#shareBtns { float: right; clear: right; margin-top: 85px; height: 16px;}
+#shareBtns { float: right; clear: right; margin-top: 10px; height: 16px;}
 #shareBtns li { width: 16px; height: 16px; float: right; margin-left: 10px;}
 #shareBtns li a { width: 16px; height: 16px; }
 #facebook a { background: url(images/social_sprites.png) left -188px no-repeat;}
