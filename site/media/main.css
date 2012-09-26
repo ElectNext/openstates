@@ -156,6 +156,9 @@ h6, .h5 { margin-bottom: 20px; font-size: 110%; line-height: 22px; font-weight: 
 .h6{ font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; color: #B4B1AB;display: block; font-weight: normal; margin-bottom: 10px}
 h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 220%; line-height: 30px; font-weight: normal;}
 
+.rollOver:link, .rollOver:visited, .rollOver:active { color: #635f5c; }
+.rollOver:hover { color: #be9c16; }
+
 .moduleTitle { background: url(images/bg_moduleTitle.jpg) left 6px no-repeat; margin-left: -30px; padding-left: 30px; padding: 20px 0 10px 75px;}
 .inlineTitle { float: left; margin-right: 15px;}
 

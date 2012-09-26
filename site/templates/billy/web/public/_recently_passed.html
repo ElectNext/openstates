@@ -19,7 +19,7 @@
             {% endif %}
             </time>
             <span class="inlineTitle h4 withTip clear"><a href="{{bill.get_absolute_url}}">{{ bill.bill_id }}</a></span>
-            <p class="clear">{{ bill.title|truncatewords:50|smallcaps}}</p>
+            <p class="clear withTip">{{ bill.title|truncatewords:50|smallcaps}}</p>
             <span class="tip sideNote">
                 {% with sponsor=bill.sponsors_manager.first %} {% if sponsor %}
                     {% trans "Sponsored By:" %} <a href="{{ sponsor.get_absolute_url }}">{{ sponsor.display_name }}</a>

@@ -33,9 +33,7 @@
             <ul>
                 {% for chamber in chambers %}
                  <li class="medModule">
-                    <a href="{% url 'legislators' metadata.abbr %}?chamber={{chamber.type}}">
-                        <h4 class="titleNumber withTip">{{ chamber.legislators.count }}<span>{{ chamber.title }}s</span></h4>
-                    </a>
+                     <h4 class="titleNumber withTip"><a class="rollOver" href="{% url 'legislators' metadata.abbr %}?chamber={{chamber.type}}">{{ chamber.legislators.count }}<span>{{ chamber.title }}s</span></a></h4>
                     <ul class="tip noSpace">
                         {% for party, count in chamber.legislators.party_counts.items %}
                         <li>{{ count }} {{party|party_noun:count}}</li>
@@ -79,10 +77,10 @@
             {% endif %}
 
             {% for chamber in chambers %}
-                <a href="{% url 'committees' abbr %}?chamber={{chamber.type}}">
+                
                 <li class="{% cycle 'one' 'two' %} titleNumber withTip">
-                {{ chamber.committees_count }}<span>{{ chamber.name }} {% trans "Committees" %}</span></li>
-                </a>
+                    <a class="rollOver"href="{% url 'committees' abbr %}?chamber={{chamber.type}}">{{ chamber.committees_count }}<span>{{ chamber.name }} {% trans "Committees" %}</span></a>
+                </li>
             {% endfor %}
             {% if  joint_committee_count %}
             <a href="{% url 'committees' abbr %}?chamber=joint">
