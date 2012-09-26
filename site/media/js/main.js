@@ -56,7 +56,7 @@ var clickable_rows = function(selector) {
 
 var fix_images = function() {
     // this URL will change
-    var placeholder = 'http://static.openstates.org/assets/v2/images/placeholder.png';
+    var placeholder = 'http://static.openstates.org/assets/v2/images/bg_noPic.jpg';
     $('img.legImgSmall').error(function() {
             $(this).attr("src", placeholder).attr(
                 "title", "No Photo Available");

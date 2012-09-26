@@ -10,7 +10,7 @@
 {% if chamber.passed_bills %}
     <ul class="withDisks">
     {% for bill in chamber.passed_bills %}
-        <li>
+        <li class="clear smModule">
             <time class="published">
             {% if chamber.type == 'upper' %}
                 {{ bill.action_dates.passed_upper.date|date:"F d, Y" }}
@@ -18,15 +18,14 @@
                 {{ bill.action_dates.passed_lower.date|date:"F d, Y" }}
             {% endif %}
             </time>
-            <span class="inlineTitle h4 withTip"><a href="{{bill.get_absolute_url}}">{{ bill.bill_id }}</a>
-                <div class="clear"></div>
-                <span class="tip sideNote">
-                    {% with sponsor=bill.sponsors_manager.first %} {% if sponsor %}
-                        {% trans "Sponsored By:" %} <a href="{{ sponsor.get_absolute_url }}">{{ sponsor.display_name }}</a>
-                    {% endif %} {% endwith %}
-                </span>
-            </span>
+            <span class="inlineTitle h4 withTip clear"><a href="{{bill.get_absolute_url}}">{{ bill.bill_id }}</a></span>
             <p class="clear">{{ bill.title|truncatewords:50|smallcaps}}</p>
+            <span class="tip sideNote">
+                {% with sponsor=bill.sponsors_manager.first %} {% if sponsor %}
+                    {% trans "Sponsored By:" %} <a href="{{ sponsor.get_absolute_url }}">{{ sponsor.display_name }}</a>
+                {% endif %} {% endwith %}
+            </span>
+            <div class="clear"></div>
         </li>
     {% endfor %}
     </ul>
