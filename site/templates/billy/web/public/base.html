@@ -71,7 +71,7 @@
         <ul id="siteDiscovery" class="clear">
             <li>{% state_select_form abbr %}</li>
             <li>
-                <span class="tip">or</span>
+                <span class="tip withTipSm">or</span>
                 <form action="/{{abbr|default:'all'}}/search/" method="get" id="searchform">
                     <input class="transparent search" type="search" name="search_text" id="id_q" placeholder="{% trans 'search the site' %}">
                     <button type="submit">
