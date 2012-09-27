@@ -353,6 +353,8 @@ input { -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 2px solid #
 
 .specialHeader { font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; color: #635F5C; text-align: center; font-size: 115%; margin-bottom: 10px; display: block;}
 .infoHeader { background: url(images/bg_question.png) center top no-repeat; padding-top: 70px;}
+#geolocateBtn { background: url(images/btn_location.png) top left no-repeat; width: 20px; height: 19px; margin: 0 auto; }
+#geolocateBtn:hover { background: url(images/btn_location.png) bottom left no-repeat; }
 
 #legSearch button { background: url(images/btn_go.png) top left no-repeat; width: 45px; height: 36px; }
 #legSearch input { float: left; margin-right: 10px; width: 108px; padding: 11px 5px 8px; }
@@ -432,6 +434,9 @@ th { text-align: left; padding: 0 15px 15px;}
 table img { width: 50px; padding: 2px; margin-top: -5px;}
 .noPaddingTable td { padding: 15px 10px 15px 0;}
 .noPaddingTable th { text-align: left; padding: 0 0 5px;}
+
+.withSmPhoto img { width: 30px; }
+td.photoRow { width: 30px; }
 
 .sort { background: url(images/sortArrows.png) left 4px no-repeat; cursor: pointer;  }
 

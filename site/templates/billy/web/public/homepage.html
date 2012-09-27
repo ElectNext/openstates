@@ -19,13 +19,15 @@
         <div class="medModule homeSections">
             <div class="sixCol colLt withDash" id="findLeg">
                 <h3>Find Your Legislator</h3>
-                <form action="/find_your_legislator/" method="get" id="legSearch">
+                <form action="/find_your_legislator/" method="get" id="legSearch" class="smModule">
                     <label class="specialHeader">Enter Your Address</label>
                     <input type="text" name="q" id="id_q" placeholder="{% trans 'enter address' %}">
                     <button type="submit">
                         <span>{% trans "Go" %}</span>
                     </button>
                 </form>
+                <span class="centeredText tip withTip">or let us locate you</span>
+                <a id="geolocateBtn" class="textReplace" href="#">Geolocate</a>
             </div>
             <div class="sixCol colRt">
                 <h3>Browse by State</h3>

@@ -9,12 +9,14 @@
                 <div class="infoBox">
                     <span class="specialHeader infoHeader">{% trans "Don't know who your legislator is?" %}</span>
                     <span class="specialHeader">{% trans "Find them now!" %}</span>
-                    <form action="/find_your_legislator/" method="get" id="legSearch">
+                    <form action="/find_your_legislator/" method="get" id="legSearch" class="smModule">
                         <input type="text" name="q" id="id_q" placeholder="{% trans 'enter address' %}">
                         <button type="submit">
                             <span>{% trans "Go" %}</span>
                         </button>
                     </form>
+                    <span class="centeredText tip withTip">or let us locate you</span>
+                    <a id="geolocateBtn" class="textReplace" href="#">Geolocate</a>
                 </div>
             </div>
         <div class="clear"></div>
