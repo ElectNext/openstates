@@ -392,7 +392,8 @@ h2.withTimeline { margin-top: 30px;}
 #sponsorList li { margin-bottom: 20px; }
 #sponsorList a, .sponsorName { font-size: 100%; display: block; }
 
-#toggleBtns button { float: left; text-indent: 0; display: inline-block; padding: 8px 15px; color: #333; text-align: center; text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; font-size: 105%; background-color: #fff; border: 1px solid
+#toggleBtns { border-top: 1px dashed #B2B1AC; padding-top: 60px; border-top: 1px dashed #B2B1AC;}
+#toggleBtns button { float: left; text-indent: 0; display: inline-block; padding: 8px 15px; color: #686862; text-align: center; vertical-align: middle; font-size: 105%; background-color: #f1f1e7; border: 1px solid
 #CCC;
 border-color:
 rgba(0, 0, 0, 0.1)
@@ -403,7 +404,8 @@ border-color:
 #E6E6E6
 #BFBFBF;
 border-bottom-color:
-#B3B3B3;margin-left: -1px; }
+#B3B3B3;margin-left: -1px; 
+font-size: 95%; }
 
 #toggleBtns button.last {
 -moz-border-radius-topleft: 0px;
@@ -421,7 +423,7 @@ border-bottom-color:
 -webkit-border-top-right-radius: 0px;
 -webkit-border-bottom-left-radius: 4px;}
 
-#toggleBtns button.active, #toggleBtns button:hover { background-color: #eceaea; -moz-box-shadow: inset 0 0 2px #b9b9b9; -webkit-box-shadow: inset 0 0 2px #b9b9b9; box-shadow: inset 0 0 2px #b9b9b9;}
+#toggleBtns button.active, #toggleBtns button:hover { color: #f8f8e9; background-color: #8a8a85; -moz-box-shadow: inset 0 1px 5px #44413f; -webkit-box-shadow: inset 0 1px 5px #44413f; box-shadow: inset 0 1px 5px #44413f;}
 
 /*  tables  */
 
@@ -731,13 +733,15 @@ input[type="checkbox"] {
 
 /* The datatables filter box. */
 #main-table_filter {
-    margin-bottom: 50px;
-    padding-top: 25px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+    border-top: 1px dashed #E2E2DD;
+    width: 100%;
+    float: right;
 }
 
-#main-table_filter label {  display: inline-block; font-family: Georgia, "Times New Roman", Times, serif;
-font-style: oblique; }
-#main-table_filter input { margin-top: -5px; margin-left: 15px; }
+#main-table_filter label {  display: inline-block; font-family: Georgia, "Times New Roman", Times, serif; font-style: oblique; font-size: 85%; float: right; text-align: right; }
+#main-table_filter input { display: block; float: right; }
 
 .old-roles-indented {
     padding-left: 20px;
