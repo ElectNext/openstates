@@ -77,13 +77,6 @@
                     {% endif %}
                 </div>
                 <div class="clear"></div>
-                <div class="eightCol clearfix">
-                    <ul class="inlineList tip noSpace" id="legLinks">
-                        <li><a href="#committees">{% trans "View committee membership" %}</a></li>
-                        <li><a href="#bills">{% trans "View sponsored bills" %}</a></li>
-                        <li><a href="#votes">{% trans "View recent votes" %}</a></li>
-                    </ul>
-                </div>
             <!-- </div> -->
                 {% comment %}
                 We also need to test whether 'chamber' is in legislator to cover
@@ -144,9 +137,15 @@
             </div>
 
 {% include "billy/web/public/developer_legislator.html" %}
-
-            {% if not legislator.active %}
-            <div class="fullWidth module">
+    <div class="twoCol colLt" id="legLinks">
+        <ul class="inlineList tip noSpace">
+            <li><a class="active" href="#committees">{% trans "Committee Membership" %}</a></li>
+            <li><a href="#bills">{% trans "Sponsored Bills" %}</a></li>
+            <li><a href="#votes">{% trans "Recent Votes" %}</a></li>
+        </ul>
+    </div>
+        {% if not legislator.active %}
+            <div class="tenCol module colRt">
                 <h3 class="moduleTitle">{% trans "Former Roles" %}</h3>
                 {% for term, chamber_roles in legislator.old_roles_manager %}
                 <div class="old-roles">
@@ -225,7 +224,7 @@
 
         {% if legislator.active %}
             {% if has_feed_entries %}
-            <div class="fullWidth module clear">
+            <div class="tenCol module colRt">
                 <h3 class="moduleTitle">{% trans "Media" %}</h3>
                 <a class="textReplace rssIcon" href="{% url 'news_list_rss' abbr 'legislators' legislator.id legislator.slug %}">rss</a>
                 <h4>{% trans "News and Blog Coverage" %}</h4>
@@ -243,7 +242,7 @@
             </div>
             {% endif %}
 
-        <div class="fullWidth module clear"></a>
+        <div class="tenCol module colRt"></a>
             <a name="committees">
             <h3 class="moduleTitle">{% trans "Committees" %}</h3>
             <ul class="inlineThirds">
@@ -261,10 +260,10 @@
             <div class="clear"></div>
         </div>
         {% endif %}
-        <div class="fullWidth module">
+        <div class="tenCol module colRt">
             <a name="bills"></a>
             <h3 class="moduleTitle">{% trans "Bills" %}</h3>
-            <div class="eightCol colLt">
+            <div class="sixCol colLt">
                 <div class="smHeader clearfix">
                     <h4 class="withTip">{% trans "Sponsored Bills" %}</h4>
                     <a class="textReplace rssIcon" href="{% url 'bills_feed' abbr %}?sponsor__leg_id={{legislator.id}}">rss</a>

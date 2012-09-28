@@ -292,7 +292,9 @@ ul li { margin-bottom: 20px; }
 .firstHalfModule { margin-right: 20px; float: left;}
 img.firstHalfModule  { width: 100px;}
 
-#legLinks { margin-top: 25px; margin-bottom: 0; }
+#legLinks { font-size: 95%; background-color: #fff; border: 1px solid #ecece4; padding: 10px 9px; width: 80px; }
+#legLinks li { padding: 8px 0; }
+#legLinks .active { background: url(images/bg_sideNav.png) top left no-repeat; display: block; margin-left: -20px; color: #fff; line-height: 15px; padding: 2px 20px 5px; }
 
 .module header { margin-bottom: 15px; }
 .withBorderLine { float: left; margin-right: 10px; padding-right: 10px; border-right: 1px solid #cecac1; }
@@ -301,7 +303,7 @@ img.firstHalfModule  { width: 100px;}
 .sources { text-align: right; display: block; }
 .mainModule { background: url(images/bg_mainBorder.png) bottom center no-repeat; padding-bottom: 80px; }
 a.viewMore { background: #fff url(images/bg_viewMore.png) 15px center no-repeat; display: inline-block; margin-top: 20px; border: 1px solid #e6e6da; -moz-border-radius: 5px; -webkit-border-radius: 5px; font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; font-size: 115%; padding: 3px 15px 3px 32px; color: #a3a730; }
-a.missingInfo{ background-color: #fff; display: inline-block; border: 1px solid #e6e6da; -moz-border-radius: 10px; -webkit-border-radius: 10px; font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; font-weight: bold; font-size: 100%; padding: 0px 6px; color: #a3a730; }
+a.missingInfo { background-color: #fff; display: inline-block; border: 1px solid #e6e6da; -moz-border-radius: 10px; -webkit-border-radius: 10px; font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; font-weight: bold; font-size: 100%; padding: 0px 6px; color: #a3a730; }
 
 span.qualityException { padding-top: 2em; display: block; }
 
