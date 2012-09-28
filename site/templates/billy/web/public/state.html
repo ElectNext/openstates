@@ -79,13 +79,13 @@
             {% for chamber in chambers %}
                 
                 <li class="{% cycle 'one' 'two' %} titleNumber withTip">
-                    <a class="rollOver"href="{% url 'committees' abbr %}?chamber={{chamber.type}}">{{ chamber.committees_count }}<span>{{ chamber.name }} {% trans "Committees" %}</span></a>
+                    <a class="rollOver" href="{% url 'committees' abbr %}?chamber={{chamber.type}}">{{ chamber.committees_count }}<span>{{ chamber.name }} {% trans "Committees" %}</span></a>
                 </li>
             {% endfor %}
             {% if  joint_committee_count %}
-            <a href="{% url 'committees' abbr %}?chamber=joint">
-                <li class="three titleNumber withTip">{{ joint_committee_count }}<span>{% trans "Joint Committees" %}</span></li>
-            </a>
+                <li class="three titleNumber withTip">
+                    <a class="rollOver" href="{% url 'committees' abbr %}?chamber=joint">{{ joint_committee_count }}<span>{% trans "Joint Committees" %}</span></a>
+                </li>
             {% endif %}
         </ul>
         <div class="clear"></div>

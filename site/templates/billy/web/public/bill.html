@@ -64,12 +64,13 @@
                 <dt class="clear contentBottom">{% trans "Bill Subjects:" %}</dt>
                 <dd>
                         {% for subject in bill.subjects %}
-                        <span class="label-bill-subject"><a href="{% url 'bills' abbr %}?subjects={{subject}}">{{subject}}</a></span>
+                            <a class="label-bill-subject" href="{% url 'bills' abbr %}?subjects={{subject}}">{{subject}}</a>
                         {% endfor %}
                         {% endif %}
                         {% for type in bill.type|slice:"1:" %}
-                        <span class="label-bill-type"><a href="{% url 'bills' abbr %}?type={{type}}">{{type|title}}</a></span>
                 </dd>
+                <dt>Subjects:</dt>
+                <dd><a class="label-bill-type"href="{% url 'bills' abbr %}?type={{type}}">{{type|title}}</a></dd>
                 {% endfor %}
 
                 <dt class="clear contentBottom">{% trans "Session:" %}</dt>

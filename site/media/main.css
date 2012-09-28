@@ -164,7 +164,7 @@ h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 220%; lin
 
 #senate_smHeader { background: url(images/icon_senate.jpg) top right no-repeat; }
 .smHeader { border-bottom: 1px dashed #E2E2DD; margin-bottom: 30px; }
-.smHeader h5 { float: left; margin-right: 20px; }
+.smHeader h5, .smHeader h4 { float: left; margin-right: 20px; }
 
 #legislatorTitle { background: url(images/icon_legislators.jpg) top left no-repeat; }
 #committeeTitle { background: url(images/icon_committees.jpg) top left no-repeat; }
@@ -612,41 +612,6 @@ p.find_your_legislator_errorbox, p.find_your_legislator_infobox{
 
 /* pulled in from external css */
 
-.label-bill-subject {
-    font-size: 10.998px;
-    font-weight: bold;
-    line-height: 14px;
-    color: #ffffff;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
-    vertical-align: baseline;
-    background-color: #999999;
-    padding: 1px 4px 2px;
-    -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-}
-.label-bill-subject a {
-    color: white;
-}
-.label-bill-type {
-    font-size: 10.998px;
-    font-weight: bold;
-    line-height: 14px;
-    color: black;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    white-space: nowrap;
-    vertical-align: baseline;
-    background-color: #D6AC04;
-    padding: 1px 4px 2px;
-    -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-}
-.label-bill-type a {
-    color: white;
-}
-
 .selected { background-color: #ffffd6; }
 
 input[type="checkbox"] {
@@ -675,11 +640,7 @@ input[type="checkbox"] {
     color: white;
 }
 
-.pagesNum {
-  height: 36px;
-  margin: 18px 0;
-}
-
+.pagesNum { height: 36px; margin: 18px 0;}
 .pagesNum ul {
   display: inline-block;
   *display: inline;
@@ -694,28 +655,10 @@ input[type="checkbox"] {
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.pagesNum li {
-  display: inline;
-}
-
-.pagesNum a {
-  float: left;
-  padding: 0 14px;
-  line-height: 34px;
-  text-decoration: none;
-  border: 1px solid #ddd;
-  border-left-width: 0;
-}
-
-.pagesNum a:hover,
-.pagesNum .active a {
-  background-color: #FFFFD6;
-}
-
-.pagesNum .active a {
-  color: #999999;
-  cursor: default;
-}
+.pagesNum li { display: inline;}
+.pagesNum a:link, .pagesNum a:visited, .pagesNum a:active { float: left; padding: 0 14px; line-height: 34px; text-decoration: none; border: 1px solid #ddd; border-left-width: 0; background-color: #F1F1E7; color: #686862; }
+.pagesNum a:hover, .pagesNum .active a, .pagesNum a.selected { background-color: #8A8A85; color: #F8F8E9; -moz-box-shadow: inset 0 1px 5px #44413f; -webkit-box-shadow: inset 0 1px 5px #44413f; box-shadow: inset 0 1px 5px #44413f;}
+.pagesNum .active a { color: #999999; cursor: default; }
 
 .pagesNum li:first-child a {
   border-left-width: 1px;
