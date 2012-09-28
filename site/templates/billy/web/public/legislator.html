@@ -42,7 +42,7 @@
                 » {{legislator.display_name}}
             </li>
         </ul>
-        <div class="fullWidth mainModule legislator">
+        <div class="fullWidth mainModule legislator clearfix">
             <!-- <div class="medModule"> -->
                 <div class="eightCol colLt">
                     <img class="firstHalfModule legImgSmall" src="http://static.openstates.org/photos/small/{{legislator.leg_id}}.jpg" />
@@ -69,6 +69,9 @@
                             {% endfor %}
                             </ul> </dd>
                         </dl>
+                        <p>
+                            {% include "billy/web/public/bio_blurb.html" %}
+                        </p>
                     </div>
                 </div>
                 <div class="fourCol colRt">
@@ -76,20 +79,14 @@
                     <div class="mapbox" id="mapbox-{{abbr}}" style="width: 100%; height: 200px"></div>
                     {% endif %}
                 </div>
-                <div class="clear"></div>
             <!-- </div> -->
                 {% comment %}
                 We also need to test whether 'chamber' is in legislator to cover
                 the David Dewhurst situation--a Lt. Governor who's listed as a voter on
                 bills and is 'active' but not associated with a chamber.
                 {% endcomment %}
-                {% if legislator.active and 'chamber' in legislator %}
-                <div class="sixCol colLt withDash clear">
-                    <p>
-                        {% include "billy/web/public/bio_blurb.html" %}
-                    </p>
-                </div>
-                <div class="sixCol colRt">
+                 <!--{% if legislator.active and 'chamber' in legislator %}
+               <div class="sixCol colRt">
                     <ul>
                         {% for office in legislator.offices %}
                         <li class="fourths {% cycle 'firstModule' 'secondModule' %}">
@@ -133,7 +130,7 @@
                     </ul>
                 </div>
                 <div class="clear"></div>
-                {% endif %}
+                {% endif %}-->
             </div>
 
 {% include "billy/web/public/developer_legislator.html" %}
