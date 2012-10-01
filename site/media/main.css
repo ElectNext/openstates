@@ -292,7 +292,7 @@ ul li { margin-bottom: 20px; }
 .firstHalfModule { margin-right: 20px; float: left;}
 img.firstHalfModule  { width: 100px;}
 
-#legLinks { font-size: 95%; background-color: #fff; border: 1px solid #ecece4; padding: 10px 9px; width: 80px; }
+#legLinks { font-size: 95%; background-color: #fff; border: 1px solid #ecece4; padding: 10px 9px; width: 80px; margin-top: -35px; }
 #legLinks li { padding: 8px 0; }
 #legLinks .active { background: url(images/bg_sideNav.png) top left no-repeat; display: block; margin-left: -20px; color: #fff; line-height: 15px; padding: 2px 20px 5px; }
 

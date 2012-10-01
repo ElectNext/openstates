@@ -72,6 +72,7 @@
                         <p>
                             {% include "billy/web/public/bio_blurb.html" %}
                         </p>
+                        <a href="#">Contact</a>
                     </div>
                 </div>
                 <div class="fourCol colRt">
@@ -141,8 +142,9 @@
             <li><a href="#votes">{% trans "Recent Votes" %}</a></li>
         </ul>
     </div>
+    <div class="tenCol colRt">
         {% if not legislator.active %}
-            <div class="tenCol module colRt">
+            <div class="module">
                 <h3 class="moduleTitle">{% trans "Former Roles" %}</h3>
                 {% for term, chamber_roles in legislator.old_roles_manager %}
                 <div class="old-roles">
@@ -221,7 +223,7 @@
 
         {% if legislator.active %}
             {% if has_feed_entries %}
-            <div class="tenCol module colRt">
+            <div class="module">
                 <h3 class="moduleTitle">{% trans "Media" %}</h3>
                 <a class="textReplace rssIcon" href="{% url 'news_list_rss' abbr 'legislators' legislator.id legislator.slug %}">rss</a>
                 <h4>{% trans "News and Blog Coverage" %}</h4>
@@ -239,8 +241,8 @@
             </div>
             {% endif %}
 
-        <div class="tenCol module colRt"></a>
-            <a name="committees">
+        <div class="module">
+            <a name="committees"></a>
             <h3 class="moduleTitle">{% trans "Committees" %}</h3>
             <ul class="inlineThirds">
                 {% for role in legislator.roles_manager %}
@@ -257,10 +259,10 @@
             <div class="clear"></div>
         </div>
         {% endif %}
-        <div class="tenCol module colRt">
+        <div class="module">
             <a name="bills"></a>
             <h3 class="moduleTitle">{% trans "Bills" %}</h3>
-            <div class="sixCol colLt">
+            <div class="fiveCol colLt">
                 <div class="smHeader clearfix">
                     <h4 class="withTip">{% trans "Sponsored Bills" %}</h4>
                     <a class="textReplace rssIcon" href="{% url 'bills_feed' abbr %}?sponsor__leg_id={{legislator.id}}">rss</a>
@@ -329,8 +331,10 @@
             <div class="clear"></div>
         </div>
  
-{% sources legislator %}
+        {% sources legislator %}
    </div>
+   <div class="clear"></div>
+  </div>
 
 <script>
     var map_url = 'http://a.tiles.mapbox.com/v3/mapbox.mapbox-light,sunlight.{{legislator.state}}{{legislator.chamber}}.jsonp';
