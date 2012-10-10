@@ -99,16 +99,20 @@
                     <ul class="clearfix" id="sponsorList">
                     {% for sponsor in bill.sponsors_manager.first_fifteen %}
                         {% if sponsor.leg_id %}
-                            <li><a href="{{ sponsor.get_absolute_url }}">{{ sponsor.display_name }}</a>
-                                <span class="tip sponsor-type">({{ sponsor.context_role.party|party_noun }}) {% trans "Dist." %} {{ sponsor.context_role.district }}</span>
+                            <li>
+                                <img class="legImgSmall" src="http://static.openstates.org/photos/xsmall/{{ sponsor.leg_id }}.jpg"/>
+                                <div class="sponsorDetail">
+                                    <a href="{{ sponsor.get_absolute_url }}">{{ sponsor.display_name }}</a>
+                                    <span class="tip sponsor-type">({{ sponsor.context_role.party|party_noun }}) {% trans "Dist." %} {{ sponsor.context_role.district }}</span>
+                                
                         {% else %}
                             {% if sponsor.committee_id %}
-                                <li><a href="{% url 'committee' abbr sponsor.committee_id %}">{{ sponsor.name }}</a>
+                                <li><a href="{% url 'committee' abbr sponsor.committee_id %}">{{ sponsor.name }}</a></div>
                             {% else %}
                                 {# Sponsor had no leg_id or was inactive. #}
-                                <li><span class="sponsorName">{{ sponsor.name }}</span>
+                                <li><span class="sponsorName">{{ sponsor.name }}</span></div>
                             {% endif %}
-                        {% endif %} <span class="tip sponsor-type">{{ sponsor.type }}</span></li>
+                        {% endif %} <span class="tip sponsor-type">{{ sponsor.type }}</span></div></li>
                     {% endfor %}
                     {% if show_all_sponsors %}
                         {% with remainder=bill.sponsors_manager.first_fifteen_remainder %}

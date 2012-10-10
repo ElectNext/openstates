@@ -159,17 +159,17 @@ h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 220%; lin
 .rollOver:link, .rollOver:visited, .rollOver:active { color: #635f5c; }
 .rollOver:hover { color: #be9c16; }
 
-.moduleTitle { background: url(images/bg_moduleTitle.jpg) left 6px no-repeat; margin-left: -30px; padding-left: 30px; padding: 20px 0 10px 75px;}
+.moduleTitle { background: url(images/bg_moduleTitle.jpg) left 6px no-repeat; margin-left: -30px; padding-left: 30px; }
 .inlineTitle { float: left; margin-right: 15px;}
 
 #senate_smHeader { background: url(images/icon_senate.jpg) top right no-repeat; }
 .smHeader { border-bottom: 1px dashed #E2E2DD; margin-bottom: 30px; }
 .smHeader h5, .smHeader h4 { float: left; margin-right: 20px; }
 
-#legislatorTitle { background: url(images/icon_legislators.jpg) top left no-repeat; }
-#committeeTitle { background: url(images/icon_committees.jpg) top left no-repeat; }
-#billTitle { background: url(images/icon_bills.jpg) top left no-repeat; }
-#sessionsTitle { background: url(images/icon_sessions.jpg) top left no-repeat; }
+#legislatorTitle { background: url(images/icon_legislators.jpg) top left no-repeat; padding: 20px 0 10px 75px;}
+#committeeTitle { background: url(images/icon_committees.jpg) top left no-repeat; padding: 20px 0 10px 75px;}
+#billTitle { background: url(images/icon_bills.jpg) top left no-repeat; padding: 20px 0 10px 75px;}
+#sessionsTitle { background: url(images/icon_sessions.jpg) top left no-repeat; padding: 20px 0 10px 75px;}
 
 a.colorRollover:link, a.colorRollover:active, a.colorRollover:visited { color: #55524f; border-bottom: 1px dotted #d2cdc4;}
 a.colorRollover:hover { color: #be9c16; }
@@ -192,7 +192,7 @@ a.tip:hover { color: #d6ac04; }
 #siteDiscovery li { float: left; margin-right: 20px; margin-bottom: 0px;}
 #siteDiscovery .tip { float: left; padding-top: 10px; margin-right: 20px; color: #635F5C;  }
 #siteDiscovery label.tip { padding-top: 5px; }
-header#mainHeader { background: url(images/bg_header.jpg) bottom left no-repeat; min-height: 216px; background-position-y: -10px; }
+header#mainHeader { background: url(images/bg_header.jpg) center top no-repeat; min-height: 216px; background-position-y: -10px; }
 .home header#mainHeader { margin-bottom: 40px;}
 
 #mainHeader h1 { width: 414px; height: 46px; padding-top: 70px; margin-bottom: 27px; float: left;}
@@ -351,6 +351,9 @@ input { -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 2px solid #
 .smSubmit { background: url(images/btn_submitSm.png) top left no-repeat; width: 85px; height: 20px; }
 .smSubmit:hover { background: url(images/btn_submitSm.png) bottom left no-repeat; }
 
+#contactBtn { background: url(images/btn_contact.png) top left no-repeat; width: 85px; height: 33px; }
+#contactBtn:hover { background: url(images/btn_contact.png) bottom left no-repeat; } 
+
 .timeHeader { font-size: 115%; margin-bottom: 10px;}
 
 .specialHeader { font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; color: #635F5C; text-align: center; font-size: 115%; margin-bottom: 10px; display: block;}
@@ -391,8 +394,9 @@ h2.withTimeline { margin-top: 30px;}
 
 .centeredText { text-align: center; }
 
-#sponsorList li { margin-bottom: 20px; }
+#sponsorList li { margin-bottom: 20px; width: 220px;}
 #sponsorList a, .sponsorName { font-size: 100%; display: block; }
+.sponsorDetail { float: left; width: 135px; margin-left: 15px;}
 
 #toggleBtns { border-top: 1px dashed #B2B1AC; padding-top: 60px; border-top: 1px dashed #B2B1AC;}
 #toggleBtns button { float: left; text-indent: 0; display: inline-block; padding: 8px 15px; color: #686862; text-align: center; vertical-align: middle; font-size: 105%; background-color: #f1f1e7; border: 1px solid
