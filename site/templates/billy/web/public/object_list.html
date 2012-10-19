@@ -17,34 +17,156 @@ $(document).ready(function() {
 {% endblock %}
 
 {% block content %}
+<div id="container" class="clearfix">
+    <div class="floatedHeader clearfix">
+        <h2 class="withFloat withTip">{{ description }}</h2>
         <a class="textReplace rssIcon" href="{{request.path}}rss/">RSS</a>
-        <h2>{{ description }}</h2>
-        <div class="fullWidth">
-            {% include "billy/web/public/_pagination.html" %}
-            {% if use_table %}
-            <table id="main-table" class="withFilter">
-                <thead>
-                    <tr id="titles">
-                        {% for header in column_headers %}
-                            <th>{{header}}</th>
-                        {% endfor %}
-                    </tr>
-                </thead>
-                <tbody>
-            {% endif %}
-
-                {% for obj in object_list %}
-                    <tr class="{% cycle 'even' 'odd' %}">
-                        {% include rowtemplate_name %}
-                    </tr>
-                {% endfor %}
-
-            {% if use_table %}
-                </tbody>
-            </table>
-            {% endif %}
-
-            {% include "billy/web/public/_pagination.html" %}
+    </div>
+    <div class="fiveCol colLt" id="eventCal">
+        <div id="calHeader">
+            <a class="headerItems textReplace" id="ltArrowCal" href="#">Previous Month</a>
+            <h4 class="headerItems withTipSm">October 2012</h4>
+            <a class="headerItems textReplace" id="rtArrowCal" href="#">Next Month</a>
         </div>
-        <div class="clear"></div>{% endblock %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nonActiveMonth">30</td>
+                    <td class="eventConfirm">1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="eventConfirm">8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td class="activeCalDate eventConfirm">11</td>
+                    <td>12</td>
+                    <td class="eventConfirm">13</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td class="eventConfirm">16</td>
+                    <td>17</td>
+                    <td class="eventConfirm">18</td>
+                    <td>19</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td class="eventConfirm">23</td>
+                    <td class="eventConfirm">24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td class="nonActiveMonth">1</td>
+                    <td class="nonActiveMonth">2</td>
+                    <td class="nonActiveMonth">3</td>
+                    <td class="nonActiveMonth">4</td>
+                </tr>
+            </tbody>    
+        </table>
+    </div>
+    <div class="sevenCol colRt">
+        <ul id="calList">
+            <li class="medModule clearfix">
+                <div class="eventHeader clearfix">
+                    <div class="fiveCol colLt">
+                        <h3 class="h4">Administrative Rules Review Committee Committee Hearing</h3>
+                    </div>
+                    <div class="oneCol colRt tip addCal">
+                        <span>Add to:</span>
+                        <a href="#">gcal</a>,
+                        <a href="#">ical</a>
+                    </div>
+                </div>
+                <dl class="inlineList clearfix tipSm">
+                    <dt>When:</dt>
+                    <dd>Nov 13, 2012</dd>  
+                    
+                    <dt>Where:</dt>
+                    <dd class="clearfix">Room 116</dd>  
+                        
+                    <dt class="clear">Participants:</dt>
+                    <dd class="clearfix"><a href="#">Administrative Rules Review Committee</a> <span class="tip inlineTip">Host</span></dd>
+                </dl>    
+                <a class="sideNote" href="#">View Sources</a>
+            </li>
+            <li class="medModule">
+                <div class="eventHeader clearfix">
+                    <div class="fiveCol colLt">
+                        <h3 class="h4">Administrative Rules Review Committee Committee Hearing</h3>
+                    </div>
+                    <div class="oneCol colRt tip addCal">
+                        <span>Add to:</span>
+                        <a href="#">gcal</a>,
+                        <a href="#">ical</a>
+                    </div>
+                </div>
+                <dl class="inlineList clearfix tipSm">
+                    <dt>When:</dt>
+                    <dd>Nov 13, 2012</dd>  
+                    
+                    <dt>Where:</dt>
+                    <dd class="clearfix">Room 116</dd>  
+                        
+                    <dt class="clear">Participants:</dt>
+                    <dd class="clearfix"><a href="#">Administrative Rules Review Committee</a> <span class="tip inlineTip">Host</span></dd>
+                </dl> 
+                <a class="sideNote" href="#">View Sources</a>   
+            </li>
+        </ul>
+    </div>    
+<!--    <div class="fullWidth">
+        {% include "billy/web/public/_pagination.html" %}
+        {% if use_table %}
+        <table id="main-table" class="withFilter">
+            <thead>
+                <tr id="titles">
+                    {% for header in column_headers %}
+                        <th>{{header}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+        {% endif %}
+
+            {% for obj in object_list %}
+                <tr class="{% cycle 'even' 'odd' %}">
+                    {% include rowtemplate_name %}
+                </tr>
+            {% endfor %}
+
+        {% if use_table %}
+            </tbody>
+        </table>
+        {% endif %}
+
+        {% include "billy/web/public/_pagination.html" %}
+    </div> -->
+    
+</div>
+{% endblock %}
 

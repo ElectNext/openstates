@@ -156,6 +156,8 @@ h6, .h5 { margin-bottom: 20px; font-size: 110%; line-height: 22px; font-weight: 
 .h6{ font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; color: #B4B1AB;display: block; font-weight: normal; margin-bottom: 10px}
 h1 { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 220%; line-height: 30px; font-weight: normal;}
 
+.withFloat { float: left; margin-right: 10px; }
+
 .rollOver:link, .rollOver:visited, .rollOver:active { color: #635f5c; }
 .rollOver:hover { color: #be9c16; }
 
@@ -234,7 +236,7 @@ nav { background: url(images/bg_secNav.png) center top no-repeat; width: 900px; 
 
 .rssIcon { float: left; background: url(images/social_sprites.png) left -222px no-repeat; width: 16px; height: 16px; margin-top: 5px;  }
 .rssIcon:hover { background: url(images/social_sprites.png) left -205px no-repeat; }
-
+.floatedHeader .rssIcon { margin-top: 48px; }
 
 .breadcrumb { font-size: 85%; margin-top: -5px; margin-left: 5px;  font-family: Georgia, 'Times New Roman', Times, serif; font-style: oblique; margin-bottom: 35px;}
 .breadcrumb li { margin-bottom: 10px;}
@@ -478,7 +480,7 @@ div.flatpage table#download_list { width: auto; }
 /* new additions  */
 
 #errorTitle { background: url(images/img_404.jpg) top left no-repeat; height: 369px; margin-top: -10px;}
-.stateTitle { margin-bottom: 45px; min-height: 108px; border-bottom: 1px dashed #b2b1ac; }
+.stateTitle, .floatedHeader { margin-bottom: 45px; min-height: 108px; border-bottom: 1px dashed #b2b1ac; }
 .stateTitle h2 { padding-top: 45px; margin-top: 20px; }
 .stateTitle p { color: #ccccbd; font-family: Georgia, 'Times New Roman', Times, serif; font-size: 115%; }
 #stateimg-al { background: url(images/state/alabama.jpg) right center no-repeat; }
@@ -543,6 +545,21 @@ h2#billSearchTitle { max-width: 100%; }
 ul#billSearchLongDesc { margin-bottom: 30px; margin-top: -15px;  }
 ul#billSearchLongDesc li { margin-right: 1em; float: left;  }
 
+#calHeader { background-color: #f4f3df; border: 1px solid #e1e1d9; text-align: center; }
+.headerItems { display: inline-block; }
+#calHeader h4 { padding: 13px 10px 10px; text-align: center;  }
+#eventCal th, #eventCal td { text-align: center; padding: 5px 1px 15px; font-size: 90%; width: 10%;}
+#eventCal th { font-family: Georgia, 'Times New Roman', Times, serif; background-color: #f4f3ec; padding: 5px 1px 8px;}
+#eventCal table, #eventCal th, #eventCal td { border: 1px solid #ececea; }
+.nonActiveMonth { color: #d1d0cf;}
+.eventConfirm { background: url(images/bg_calEvent.png) center 28px no-repeat; }
+.activeCalDate.activeCalDate { background: #d57129 url(images/bg_calEventActive.png) center 26px no-repeat; color: #fff; }
+#ltArrowCal { background: url(images/bg_calArrowLt.png) left top no-repeat; height: 13px; }
+#rtArrowCal { background: url(images/bg_calArrowRt.png) right top no-repeat; height: 13px; }
+#ltArrowCal:hover { background: url(images/bg_calArrowLt.png) left bottom no-repeat; height: 13px; }
+#rtArrowCal:hover { background: url(images/bg_calArrowRt.png) right bottom no-repeat; height: 13px; }
+#calList dd{ margin-right: 35px; }
+.addCal { background: url(images/calendar_1.png) right center no-repeat; margin-right: -20px; padding-right: 20px; }
 
 /* footer */
 
@@ -618,7 +635,7 @@ p.find_your_legislator_errorbox, p.find_your_legislator_infobox{
 
 /* pulled in from external css */
 
-.selected { background-color: #ffffd6; }
+.selected, #eventCal .eventConfirm:hover  { background-color: #ffffd6; }
 
 input[type="checkbox"] {
     width: 1em;
