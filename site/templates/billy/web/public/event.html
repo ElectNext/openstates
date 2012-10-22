@@ -15,14 +15,12 @@
             <dt>{% trans "When" %}:</dt>
             <dd>
                 {{event.when|date:"M j, Y"}}
-                <a href="http://www.google.com/calendar/event?{{gcal_string}}"
-                    >gcal</a>
-                <a href="{% url "event_ical" abbr event|underscore_field:"id" %}"
-                    >ical</a>
+                <a href="http://www.google.com/calendar/event?{{gcal_string}}">gcal</a>
+                <a href="{% url "event_ical" abbr event|underscore_field:"id" %}">ical</a>
 
             </dd>
             <dt>{% trans "Where" %}:</dt>
-            <dd>{{ event.location }}</dd>
+            <dd>{{ event.location }}</dd> 
         </dl>
         <div class="clear"></div>
     </div>
