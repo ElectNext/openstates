@@ -3,9 +3,10 @@ import os
 from os.path import abspath, dirname, join
 
 SCRAPER_PATHS=[os.path.join(os.getcwd(), 'openstates')]
-MONGO_HOST = 'localhost'
+MONGO_HOST="127.0.0.1"
 MONGO_PORT = 27017
-MONGO_DATABASE = 'fiftystates'
+MONGO_DATABASE = 'billy'
+MONGO_USER_DATABASE = 'billy_userdata'
 
 PARTY_DETAILS = {
     # reminder: think through Singular, Plural, Adjective
