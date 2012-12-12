@@ -160,10 +160,13 @@ class Office(object):
         if i <= 2:
             lines = lines[::-1]
 
-        # Make extra sure "PA 12345" line is last.
+        # If the address is does not contain PA XXXXX then the while loop below will
+        # run forever. I added the break_out_counter to the mix to avoid the infinite
+        # loop as it is easier than getting the state website to be complete :)
         num_lines = len(lines)
         break_out_counter = 0
         
+        # Make extra sure "PA 12345" line is last.
         while not re.search('PA \d{5}', lines[-1]) and break_out_counter < num_lines:
             lines = lines[-1:] + lines[:-1]
             break_out_counter += 1
