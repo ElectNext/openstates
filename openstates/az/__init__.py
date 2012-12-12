@@ -474,6 +474,12 @@ metadata = dict(
                 '_scraped_name': 'Fiftieth Legislature - Second Regular Session',
                 #'start_date': , 'end_date':
                 },
+            '51st-1st-regular':
+                {'type': 'primary', 'session_id': 110,
+                'display_name': '51st Legislature, 1st Regular Session',
+                '_scraped_name': 'Fifty-first Legislature - First Regular Session',
+                #'start_date': , 'end_date':
+                },
         },
         _ignored_scraped_sessions=[
             'Forty-second Legislature - First Regular Session',
