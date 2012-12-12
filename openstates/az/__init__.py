@@ -133,6 +133,13 @@ metadata = dict(
             ],
             'start_year': 2011, 'end_year': 2012
         },
+        {'name': '51',
+            'sessions': [
+            '51st-1st-regular',
+            ],
+            'start_year': 2013, 'end_year': 2015
+        
+        },
         ],
         session_details={
             #'42nd-1st-regular':
